@@ -8,4 +8,4 @@ class Feed(models.Model):
     views_count = models.PositiveIntegerField(default=0, editable=False)
 
     def __str__(self) -> str:
-        return f"{self.title[:10]}..."
+        return f"{self.title}"
