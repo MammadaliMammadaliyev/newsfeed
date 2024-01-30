@@ -1,9 +1,10 @@
 from django.urls import path
-from .views import home
+from .views import home, feed_details
 
 
 urlpatterns = [
-    path("", home),
+    path("", home, name="home"),
+    path("xeber/<int:pk>/", feed_details, name="xeber_detal")
 ]
 
 

@@ -45,20 +45,14 @@
     </style>
 </head>
 <body>
-    <div class="main" style="display: flex; gap: 10px;">
-        {% for feed in feeds %}
-        <div class="product-card">
-            <img src="{% static 'feeds/fox-news-logo.png' %}" alt="Product Image">
-            <a href="{% url 'xeber_detal' feed.pk %}" style="display: flex; gap: 10px; text-decoration: none;">
-                <div class="title">{{ feed.get_representation_title }} </div>
-            </a>
-</p>
-            <div class="date">{{ feed.published_at }} | <span style="color: red;">{{ feed.views_count }} views</span></div>
-        </div>
-        {% endfor %}
+    <div class="main">
+        <h1>{{ feed.title }}</h1>
+        <text>
+            {{ feed.body }}
+        </text>
+        <p>{{ feed.views_count }}</p>
+        <p>{{ feed.published_at }}</p>
     </div>
-    <a href="{% url 'home' %}?sort_by_view_count=True">By views count</a>
-    <a href="{% url 'home' %}?by_latest=True">By latest</a>
-    <a href="{% url 'home' %}?by_oldest=False">By oldest</a>
-</body> 
+    <a href="{% url 'home' %}">Home page</a>
+</body>
 </html>
